@@ -59,3 +59,10 @@ This project focuses on building a **clean and functional admin-user system** wi
    git clone https://github.com/yourusername/iwstech.git
    cd iwstech
 
+
+
+## 📸 Screenshots
+
+### 🏠 Homepage
+
+![Register Screenshot](drawables/register_page.png)
