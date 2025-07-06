@@ -27,7 +27,7 @@ This project focuses on building a **clean and functional admin-user system** wi
 - View all registered users
 - Add, edit, or delete users
 - Manage user roles and permissions
-- (Optional) Moderate PC component listings
+
 
 ## 🧪 Technologies Used
 
