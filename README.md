@@ -63,6 +63,50 @@ This project focuses on building a **clean and functional admin-user system** wi
 
 ## 📸 Screenshots
 
-### 🏠 Homepage
+### 📝 Register Page
 
-![Register Screenshot](drawables/register_page.png)
+![Register Page](drawables/register_page.png)
+
+> User registration form with input validation for a seamless sign-up experience.
+
+---
+
+### 🔐 Login Page
+
+![Login Page](drawables/login_page.png)
+
+> Clean login interface allowing users and admins to securely access the platform.
+
+---
+
+### 🏠 Home Page
+
+![Home Page](drawables/home_page.png)
+
+> The main landing page displaying featured PC components and navigation options.
+
+---
+
+### 🛠️ Admin – Manage Users Page
+
+![Manage Users Page](drawables/manage_users.png)
+
+> Admin dashboard interface for viewing, editing, and deleting user accounts.
+
+---
+
+### ➕ Admin – Add Product Page
+
+![Add Product Page](drawables/add_product.png)
+
+> Admin functionality to add new PC components to the marketplace with form inputs.
+
+---
+
+### 🗂️ Product Listing by Category
+
+![View Products](drawables/categories.png)
+
+> Browse components by category with dropdown filtering and sort options.
+
+
