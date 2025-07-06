@@ -1,0 +1,24 @@
+.dialog-container {
+  color: black;
+  position: fixed;
+  padding: 40px 30px;
+  border-radius: 20px;
+  text-align: center;
+  background-color: transparent;
+  backdrop-filter: blur(20px) contrast(90%) brightness(80%);
+  background-color: var(--highlight-color);
+  box-shadow: 10px 10px 40px black;
+  max-width: 400px;
+  width: 90%;
+  display: none;
+  color: #1a1a1a;
+  animation: scale-in-animation 0.3s ease-in-out;
+}
+.dialog-container .close-dialog-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}

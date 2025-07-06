@@ -1,0 +1,259 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* main nav bar */
+.main-nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 1em 2em;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  animation: slideInFromTop 0.6s ease-in-out;
+  z-index: 100;
+}
+
+/* nav bar logo */
+.main-nav-bar .nav-logo {
+  max-width: 80px;
+  display: inline;
+  animation: slideInFromBottom 0.8s ease-in-out;
+}
+
+/* nav bar ul */
+.main-nav-bar ul {
+  list-style: none;
+  padding: 0;
+  animation: slideInFromLeft 0.8s ease-in-out;
+}
+
+.main-nav-bar ul > li {
+  position: relative;
+  text-align: center;
+  padding: 10px 30px;
+  text-align: center;
+}
+
+/* navigation container icon */
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  display: inline;
+  align-content: center;
+}
+
+/* nav bar links */
+.nav-container {
+  display: inline-block;
+  /* flex-direction: row; */
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  border-radius: 40px;
+  gap: 10px;
+  transition: all 0.2s ease-in;
+}
+.nav-icon-lbl-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+/* category item in nav container */
+.nav-container.category {
+  position: relative;
+  color: white;
+}
+
+/* categories drop down list */
+.categories-drop-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 999;
+  color: black;
+  border-radius: 20px;
+  background-color: #e3e3e3;
+  box-shadow: 2px 2px 3px var(--secondary-color);
+  overflow: hidden;
+}
+
+/* show drop down on hover */
+.nav-container.category:hover .categories-drop-list {
+  display: inline-block;
+  transform: translateY(0%);
+  animation: slideInFromTop 0.5s;
+}
+
+/* dropdown items */
+.categories-drop-list .category-drop-item {
+  display: block;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.5);
+  font-size: 1em;
+  color: black;
+  transition: all 0.2s ease-in;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.categories-drop-list .category-drop-item:hover {
+  background-color: var(--highlight-color);
+  color: black;
+}
+
+.category-drop-item.active {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/* active nav item */
+.nav-container.active {
+  background-color: var(--highlight-color);
+  color: black;
+  box-shadow: 1px 1px 20px black;
+  transform: scale(1.05);
+}
+
+/* user welcome */
+.main-nav-bar .user-welcoming {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  gap: 20px;
+  animation: slideInFromBottom 0.8s ease-in-out;
+}
+
+/* welcoming text */
+.main-nav-bar .user-welcoming a {
+  background-color: var(--highlight-color);
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 50px;
+  color: black;
+}
+
+/* nav profile icon  */
+.nav-bar-profile-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 50%;
+}
+/********************** user profile Container **************/
+.user-profile-container {
+  position: absolute;
+  top: calc(100% + 20px);
+  width: 400px;
+  max-width: 600px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(10, 69, 117, 0.7);
+  /* adding some blur with brightness */
+  backdrop-filter: blur(15px) brightness(1.1);
+  color: white;
+  transform: translateY(-150%) translateX(150%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+.user-profile-container.show {
+  opacity: 1;
+  transform: translateY(0%) translateX(-50%) scale(1);
+}
+
+/* user profile container > h2 */
+.user_profile_container h2 {
+  text-align: start;
+  margin-bottom: 130px;
+  font-size: 1.2rem;
+}
+
+/* profile image section */
+.profile-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+/* profile image section */
+.profile-image-section > img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* form group */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* form group label */
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+/* form group input fields */
+.form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 1rem;
+  color: white;
+  outline: none;
+}
+
+/* disabled field : email field */
+.form-group input:disabled {
+  opacity: 0.5;
+  /* cursor not allowed here */
+  cursor: not-allowed;
+}
+
+/* save changes button */
+.btn-save-changes {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--highlight-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+/* label btn change photo */
+.lbl-btn-change-photo {
+  background-color: #ffc107;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 1px 1px 10px white;
+  color: black;
+  cursor: pointer;
+}
+
+/* save change button hover */
+.btn-save-changes:hover {
+  background-color: #e0a800;
+}

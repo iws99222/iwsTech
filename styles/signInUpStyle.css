@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* body style */
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.background-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../drawables/sign-in-up-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  transform-origin: center;
+  background-size: cover;
+  object-fit: cover;
+  /* bg animation */
+  animation: backgroundScaleTranslate 5s ease-in-out infinite;
+}
+/* main container  */
+.container {
+  width: 75%;
+  height: 75%;
+  display: flex;
+  position: absolute;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
+  backdrop-filter: blur(3px) brightness(0.9);
+}
+/* site */
+/* .site-logo {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+} */
+
+/* form box (sign in & register) */
+.container .form-box {
+  position: absolute;
+  height: 100%;
+}
+/* this box inside form boxes, that contains the upper-box (inputs)
+and the -box(login/register links) */
+.box {
+  width: 100%;
+  /* this for making the upper-box and button-box are spaced evenly  */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* designing the upper-box  */
+.box .upper-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* this is the link in  (don't have an account? register)  */
+.link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease-in-out;
+}
+.link:hover {
+  color: var(--highlight-color);
+}
+
+/* adding some properties for login form  */
+.container .form-box.login {
+  /* width half of the screen*/
+  width: 50%;
+  /* aligned left */
+  left: 0;
+  /* adding animation  */
+  animation: scale-in-animation 0.6s forwards;
+}
+
+/* adding some properties for register form  */
+.container .form-box.register {
+  /*width 50% of the screen*/
+  width: 50%;
+  /* aligned right */
+  right: 0;
+  /* defaultly not visible */
+  opacity: 0;
+  /* adding animation  */
+  animation: scale-out-animation 0.6s forwards;
+}
+
+/********** panel section  ************/
+
+/* main panel  */
+.container .panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  right: 0;
+  overflow: hidden;
+  transition: all 0.6s;
+  border-radius: 150px 0px 0px 150px;
+  text-align: center;
+  transform: scale(1);
+  transition: transform 0.8s ease, border-radius 0.6s ease;
+}
+
+/* panel video */
+.my-panel-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* object fit */
+  object-fit: cover;
+  position: relative;
+}
+
+/* the register and login panel position is absoluted */
+.panel .register,
+.panel .login {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+/* remember me box */
+.remember-me {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+}
+
+.panel .register,
+.panel .login p {
+  margin: 20px;
+  color: white;
+  font-weight: bolder;
+}
+
+/* this will occurs when clicking sign-in or register btns */
+
+.container.active .panel {
+  /* moving panel to the left */
+  transform: translateX(-110%);
+  /* changing the border roudness sides  */
+  border-radius: 0px 150px 150px 0px;
+}
+
+/* hiding login container  */
+.container.active .form-box.login {
+  animation: scale-out-animation 0.8s forwards;
+}
+
+/* showing register form  */
+.container.active .form-box.register {
+  animation: scale-in-animation 0.8s forwards;
+}
+
+/* here's the default style for all button */
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 140px;
+  cursor: pointer;
+  padding: 10px 40px;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  background: #1e2a38;
+  color: white;
+  font-weight: bolder;
+  box-shadow: 3px 3px 10px #2b5876;
+}
+
+button:hover {
+  background-color: var(--highlight-color);
+  transform: translateY(-10%);
+  color: black;
+  border: none;
+}
+
+/* forms style  */
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  padding: 20px;
+}
+.input-box {
+  width: 80%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  margin: 5px 0px 20px 0px;
+  padding: 0;
+  border-radius: 30px;
+  background-color: #eee;
+  transition: transform 0.2s;
+  overflow: hidden;
+}
+.input-box i {
+  flex: 0;
+  align-self: center;
+  color: black;
+  padding-right: 20px;
+}
+/* using here focus within, because i am focusing on div
+not input  */
+.input-box:focus-within {
+  color: white;
+  transform: scale(1.1);
+  background-color: #eee;
+}
+
+.input-box:focus-within i {
+  color: black;
+}
+/* all input fields (except the radios) */
+input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding-right: 10px;
+  padding-left: 25px;
+}
+
+.input-box.pass-box {
+  display: flex;
+  flex-direction: row;
+  background: red;
+}
+
+/* remember me container */
+.remember-me-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+/*** remember me box ****/
+
+/* this is the default view */
+.keep-sign-in-box {
+  appearance: none;
+  width: 40px;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 30px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.4s ease-in-out;
+}
+/* this the toggle circle inside in checkbox */
+.keep-sign-in-box::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  left: 0px;
+  transition: left 0.3s ease;
+}
+/* when we check the remember me, we change tha background color of the switch container */
+.keep-sign-in-box:checked {
+  background-color: var(--primary-color);
+}
+/* when it's checked we are moving the toggle by 50% to left 
+and changing the background color of the toggle
+*/
+.keep-sign-in-box:checked::before {
+  left: 50%;
+  background-color: white;
+}
+
+/********** animation section  ***************/
+
+/* for background scaling*/
+@keyframes backgroundScaleTranslate {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  50% {
+    transform: scale(1.05) translate(5px, -5px);
+  }
+  100% {
+    transform: scale(1) translate(0, 0);
+  }
+}

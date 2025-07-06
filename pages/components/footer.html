@@ -1,0 +1,127 @@
+<style>
+  /* starting building the footer */
+  .site-footer {
+    background-color: var(--primary-color);
+    color: #ccc;
+    padding: 40px 20px;
+  }
+
+  /* footer layout container using grid */
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  /* heading styles inside footer */
+  .footer-section h3 {
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  /* footer text and link color style */
+  .footer-section p,
+  .footer-section a {
+    color: #ccc;
+    font-size: 14px;
+  }
+
+  /* contact and nav links hover color */
+  .footer-section a:hover {
+    color: var(--highlight-color);
+  }
+
+  /* social icons container */
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* styling social media icons row */
+  .social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s;
+  }
+
+  /* image styling for social icons */
+  .social-icons img {
+    width: 24px;
+    /* adding some brightness to them */
+    filter: brightness(0.8);
+  }
+
+  /* hover animation for social icons */
+  .social-icons a:hover {
+    transform: scale(1.2);
+    filter: brightness(1);
+  }
+
+  /* bottom copyright row */
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid #333;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 13px;
+    color: #888;
+  }
+
+  /* site logo */
+  .site-logo {
+    max-width: 150px;
+  }
+</style>
+
+<!-- global link -->
+<link rel="stylesheet" href="../../styles/globalStyle.css" />
+
+<!-- main site footer container -->
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- About section -->
+    <div class="footer-section about">
+      <img
+        class="site-logo"
+        src="../../drawables/logo-white.png"
+        alt="site-logo" />
+      <p>
+        Leading provider of high-performance PC components and custom builds.
+      </p>
+    </div>
+
+    <!-- Contact us info section -->
+    <div class="footer-section contact">
+      <h3>Contact Us</h3>
+      <p>Email: <a href="mailto:support@iwstech.com">support@iwstech.com</a></p>
+      <p>Phone: <a href="tel:+96112345678">+961 1 234 5678</a></p>
+      <p>
+        Location: Bchara El Khoury Street, Beirut, Lebanon<span>
+          <!-- this link here for navigating to maps page -->
+          <a
+            href="../../pages/nav-screens/mapLocation.php"
+            class="view-on-maps-link"
+            target="_blank">
+            View on Maps</a
+          ></span
+        >
+      </p>
+    </div>
+
+    <!-- Social media section -->
+    <div class="footer-section social">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/15UuVFyaQG/" target="_blank"
+          ><img src="../../drawables/icons/ic_fb.png" alt="Facebook"
+        /></a>
+        <a href="https://www.instagram.com/issawsleiman_/" target="_blank"
+          ><img src="../../drawables/icons/ic_instagram.png" alt="Instagram"
+        /></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer bottom copyright -->
+  <div class="footer-bottom">&copy; 2025 IWSTECH. All rights reserved.</div>
+</footer>

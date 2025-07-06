@@ -1,0 +1,11 @@
+INSTRUCTIONS TO MAKE THE WEBSITE FULLY FUNCTIONAL:
+
+1. Import the database file:
+   - Open phpMyAdmin or your preferred MySQL management tool.
+   - Import the file named: iwstech_db.sql
+
+2. Final Steps:
+   - Once the import is complete, return to your website.
+   - Refresh the page.
+
+The website should now be fully functional with all database content loaded.

@@ -1,0 +1,72 @@
+/* styling manage user screen */
+
+table {
+  width: 100%;
+  padding: 50px 40px;
+  background-color: #e3e3e3;
+  margin: 20px 0px;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px white;
+}
+
+th {
+  padding: 10px;
+  text-align: center;
+}
+
+table thead {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bolder;
+  padding: 5px 0px;
+}
+
+table td {
+  padding: 25px 0px;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* user profile image */
+.user-profile {
+  width: 70px;
+  height: 70px;
+  box-shadow: 1px 1px 10px black;
+  object-fit: cover;
+  border-radius: 100%;
+  background: transparent;
+  cursor: pointer;
+  /* transition */
+  transition: transform 0.4s ease-in-out, width 0.4s ease-in-out,
+    height 0.4s ease-in-out;
+}
+/* viewing state of the user profile */
+.user-profile.viewed {
+  width: 120px;
+  height: 120px;
+  transform: scale(4) translateX(150%);
+}
+/* activation toggle button */
+.activation-toggle-btn {
+  width: 200px;
+  padding: 10px 20px;
+  color: black;
+  text-transform: uppercase;
+  background-color: var(--highlight-color);
+  border-radius: 50px;
+  border: none;
+  box-shadow: 1px 1px 5px var(--primary-color);
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* btn activate/disactivate */
+.activation-toggle-btn.active {
+  background-color: var(--red-color);
+  color: white;
+}
+
+.activation-toggle-btn:hover {
+  transform: scale(1.1) translateY(-5%);
+}

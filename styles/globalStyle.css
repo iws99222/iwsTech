@@ -1,0 +1,96 @@
+/* public properties  */
+:root {
+  --primary-color: #1e2a38;
+  --secondary-color: #2b5876;
+
+  --highlight-color: #f7b714;
+  --red-color: #ff0f37;
+  --placeholder-color: rgba(0, 0, 0, 0.5);
+  --gradient-bg: linear-gradient(var(--secondary-color));
+  --padding: 1rem;
+}
+/* my public font face */
+@font-face {
+  font-family: "Roboto";
+  src: url("fonts/RobotoMono-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+/* global animations  */
+@keyframes scale-in-animation {
+  from {
+    opacity: 0;
+    display: none;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes scale-out-animation {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+/* animation section  */
+@keyframes slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-in-right {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

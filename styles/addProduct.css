@@ -1,0 +1,164 @@
+/* whole container */
+.main-container {
+  /* adding padding from all sides except the top */
+  padding: 0px 20px 20px 10px;
+}
+/* container heading */
+.main-container h1 {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: var(--higlight-color);
+}
+
+/* form element */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* input fields */
+.my-input,
+textarea.my-input {
+  width: 100%;
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+/* price input */
+.my-input.price {
+  max-width: 100px;
+}
+
+/* Focus style */
+.my-input:focus {
+  border-color: #5b4ea4;
+  outline: none;
+}
+
+/* add btn styling */
+.add-btn {
+  width: fit-content;
+  padding: 14px 28px;
+  background-color: var(--secondary-color);
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* btn hover */
+.add-btn:hover {
+  background-color: var(--highlight-color);
+  color: black;
+}
+
+/* category select */
+/* Category select box styling */
+.category-select-box {
+  padding: 14px 16px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  appearance: none; /* remove default arrow on some browsers */
+  background-color: white;
+  background: url("../../drawables/icons/ic_drop_down.png");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+/* styling the main photo section */
+.main-photo-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 4px #e3e3e3;
+  /* border: 1px solid grey;/ */
+  background-color: #f3f3f3;
+}
+
+/* styling the preview image container */
+.preview-image-container {
+  /* by default, we won't show, until the user choose a photo */
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  gap: 10px;
+  width: 100%;
+  /* margin to center */
+  margin: auto;
+  /* adding scale in animation when showing */
+  animation: scale-in-animation 0.6s;
+}
+
+/* button that upload photo */
+.btn-upload-photo {
+  text-transform: uppercase;
+  background: var(--secondary-color);
+  padding: 10px 25px;
+  color: white;
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* hovering effect */
+.btn-upload-photo:hover {
+  background-color: var(--highlight-color);
+  color: black;
+}
+
+/* the image fill the box (position is absolute) */
+.preview-image-container .image-preview {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* and styling the delete image btn (position is also absolute) */
+.preview-image-container .btn-delete-chosen-img {
+  width: 40px;
+  height: 40px;
+  top: 0;
+  right: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: url("../../drawables/icons/ic_delete.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* adding some hover effect on delete btn */
+.preview-image-container .btn-delete-chosen-img:hover {
+  transform: scale(1.1);
+}
+
+/* by default it's hidden
+   this will be showing only of the admin tries to 
+   submit the form without adding an image for the product
+*/
+#txt-missing-img {
+  display: none;
+  color: red;
+}

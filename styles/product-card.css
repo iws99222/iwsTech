@@ -1,0 +1,70 @@
+/* THIS STYLE IS RESPONSIBLE FOR PRODUCT CARD STYLING */
+
+/* section of latest products */
+.products-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* product card */
+.product-card {
+  width: 240px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 350px;
+  max-height: 400px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 1px 5px;
+  cursor: pointer;
+  animation: slideInFromBottom 0.5s ease-in-out;
+  /* preventing being above drop down  */
+  z-index: 10;
+  transition: transform 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+  background-color: var(--highlight-color);
+  color: white;
+}
+
+/* product card imagr */
+.product-card img {
+  max-width: 250px;
+  max-height: 200px;
+  object-fit: cover;
+  padding: 10px 10px;
+  border-radius: 15px;
+}
+/* product card name */
+.product-card p {
+  max-width: 100%;
+  padding: 10px 20px;
+  text-align: center;
+  font-size: 15px;
+  overflow-wrap: break-word;
+
+  white-space: normal;
+  font-weight: 300;
+}
+/* product card price */
+#product-card-price {
+  text-align: center;
+  font-size: 1.5em;
+  color: red;
+}
+#for-only-txt {
+  font-size: 10px;
+  color: #999;
+  margin-top: 2px;
+  text-transform: uppercase;
+}

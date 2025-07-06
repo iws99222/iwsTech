@@ -1,0 +1,390 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/* TOP CONTAINER */
+.top-container {
+  width: 100%;
+  max-height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 20px 20px 0px 0px;
+  box-shadow: 5px 5px 15px var(--primary-color);
+  overflow: hidden;
+  color: white;
+  padding: 30px 0px;
+  margin-bottom: 20px;
+}
+.top-container .desc-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+}
+
+/* MIDDLE CONTAINER */
+.middle-container {
+  margin: 20px 0px;
+}
+
+/* BOTTOM CONTAINER */
+.bottom-container #my-marquee {
+  width: 100%;
+  font-family: Arial;
+  font-size: 18px;
+  color: black;
+  font-weight: 300;
+  background-color: #ffd369;
+  padding: 10px 0px;
+  border-radius: 0px 0px 20px 20px;
+  padding: 10px 0px;
+}
+
+/* latest items text */
+.latest-items-txt {
+  font-size: 1.8em;
+  font-weight: 600;
+  margin: 40px 0px;
+}
+
+/* === Container that holds the slider btns and the section */
+.slider-controls-section {
+  width: 100%;
+  display: flex;
+  /* display: none; */
+  height: 400px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  padding: 20px;
+}
+
+/* === slider button controls */
+.btn-slide-prev,
+.btn-slide-next {
+  padding: 10px;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  background-color: gray;
+  transition: background-color 0.4s ease-in-out;
+  cursor: pointer;
+  /* making the buttons always above slider pages */
+  z-index: 10;
+}
+
+/* hover action on prev and next btn */
+.btn-slide-prev:hover,
+.btn-slide-next:hover {
+  background-color: black;
+}
+
+/* === SLIDER CONTAINER */
+.slider-container {
+  flex: 1;
+  pointer-events: all;
+}
+
+/* === BASE SLIDE STYLES === */
+.slide {
+  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: 30px;
+  padding: 40px;
+  margin: 0 10% 0 10%;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px white;
+  background-color: #eee;
+  user-select: none;
+  opacity: 0;
+  transform: translateX(100%) scale(0.95);
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* Slide active state */
+.slide.active {
+  opacity: 1;
+  z-index: 10;
+  transform: translateX(0%) scale(1);
+}
+
+/* === FIRST PAGE STYLING === */
+.slide.first-page {
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  align-content: center;
+}
+
+/* Text & image section layout */
+.slide.first-page .text-section,
+.slide.first-page .image-section {
+  flex: 1;
+  font-size: 2em;
+}
+
+/* Responsive image sizing */
+.slide.first-page img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Title styling (first page and shared base) */
+.slide .text-section h1 {
+  color: var(--red-color);
+  opacity: 0;
+  font-size: 2.1em;
+  margin-bottom: 20px;
+  transform: translateX(-100%) scale(0.95);
+  transition: transform 0.6s ease-in-out 0.6s, opacity 0.6s ease-in-out 0.6s;
+}
+
+/* Paragraph styling */
+.slide .text-section p {
+  opacity: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  transform: translateX(-100%) scale(0.95);
+  transition: transform 0.6s ease-in-out 0.9s, opacity 0.6s ease-in-out 0.9s;
+}
+
+/* Active animations */
+.slide.active .text-section h1 {
+  transform: translateX(0%) scale(1);
+  opacity: 1;
+}
+
+.slide.active .text-section p {
+  transform: translateX(0%) scale(1);
+  opacity: 1;
+}
+
+/* First page image animation */
+.slide.first-page .image-section img {
+  transform: translateX(150%) scale(0.9);
+  opacity: 0;
+  transition: transform 0.7s ease-in-out 1.2s, opacity 0.5s ease 1.2s;
+}
+
+.slide.active.first-page .image-section img {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+/* === SECOND PAGE STYLING === */
+.slide.second-page {
+  min-width: 500px;
+  height: 400px;
+  background-image: url(../../drawables/slideshow/slider-1.png);
+  display: flex;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text section styling */
+.slide.second-page .text-section {
+  font-size: 3em;
+}
+
+/* Title animation */
+.slide.second-page .text-section h1 {
+  transform: translateY(-100%) scale(0.9);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.slide.active.second-page .text-section h1 {
+  transform: translateY(0%) scale(1);
+  opacity: 1;
+}
+
+/* Paragraph animation */
+.slide.second-page .text-section p {
+  font-size: 1.1em;
+  transform: translateY(100%) scale(0.9);
+  opacity: 0;
+  transition: transform 1s ease-in-out 0.4s, opacity 1s ease-in-out 0.4s;
+}
+
+.slide.active.second-page .text-section p {
+  transform: translateY(0%) scale(1);
+  opacity: 1;
+}
+
+/* === THIRD PAGE STYLING === */
+.slide.third-page {
+  min-width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* Image container */
+.slide.third-page .image-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+/* Image animation - scale in */
+.slide.third-page .image-section img {
+  max-width: 30%;
+  max-height: 30%;
+  object-fit: contain;
+  display: block;
+  align-self: center;
+  /* default scale is 0.5 */
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* when the third page be active */
+.slide.active.third-page .image-section img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* === FOURTH PAGE STYLING === */
+.slide.fourth-page {
+  min-width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding: 20px;
+}
+
+/* Image container */
+.slide.fourth-page .image-section {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  max-height: 100%;
+}
+
+/* Image animation - scale in */
+.slide.fourth-page .image-section img {
+  max-width: 130%;
+  max-height: 130%;
+  object-fit: contain;
+  display: block;
+  align-self: center;
+  /* default scale is 0.5 */
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* when the fourth page be active */
+.slide.fourth-page .image-section img {
+  transform: translateX(150%) translateY(-150%);
+  opacity: 1;
+}
+
+.slide.fourth-page .text-section p {
+  opacity: 0;
+  font-size: 2.5em;
+  color: black;
+  transform: translateX(-100%);
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.slide.active.fourth-page .text-section p {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide.fourth-page .text-section h2 {
+  color: var(--red-color);
+  font-size: 3em;
+  opacity: 0;
+  transform: scale(0);
+  transition: transform 1.2s ease-in-out, opacity 1.2s ease-in-out;
+}
+
+.slide.fourth-page.active .text-section h2 {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.slide.active.fourth-page .image-section img {
+  transform: translateX(0%) translateY(0%);
+}
+
+/* === SHARED BUTTON STYLES === */
+.slide button {
+  width: 150px;
+  height: 50px;
+  border: none;
+  margin-top: 2em;
+  cursor: pointer;
+  background-color: var(--highlight-color);
+  /* use CSS variable for theme */
+  color: black;
+  text-transform: uppercase;
+  font-weight: bolder;
+  border-radius: 50px;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* === ALL SLIDE BUTTONS */
+.slide button:hover {
+  background-color: #ffc107;
+  /* example hover */
+  transform: scale(1.05);
+}
+
+/********  === SLIDER DOTS *********/
+/* === SLIDER DOTS CONTAINER */
+.slider-dots-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* dots of the slider */
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: orange;
+  border-radius: 50px;
+  margin-left: 10px;
+  transition: width 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+/* the selected to style */
+.dot.active {
+  /* some width to the selected */
+  width: 30px;
+  background-color: var(--red-color);
+}

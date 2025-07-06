@@ -1,0 +1,66 @@
+.categories-product-top-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Sort Button  */
+.categories-product-top-container .btn-sort-products {
+  position: fixed;
+  right: 20px;
+  background: white;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  box-shadow: 5px 5px 16px lightblue;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 100;
+}
+
+/* Dropdown list */
+.sort-drop-down-list {
+  display: none;
+  white-space: nowrap;
+  padding: 15px 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  text-align: start;
+}
+
+.btn-sort-products:hover .sort-drop-down-list {
+  display: inline-block;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Dropdown Items */
+.sort-drop-down-list li {
+  list-style: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  text-align: start;
+}
+
+.sort-drop-down-list li:hover {
+  background-color: #f0f0f0;
+}
